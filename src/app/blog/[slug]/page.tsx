@@ -77,16 +77,15 @@ export default async function BlogDetailPage({ params }: PageProps) {
     <main className="min-h-screen bg-[#FBFDFA]">
       <Navbar />
 
-      {/* Dynamic Top Banner with Breadcrumbs */}
+    {/* Dynamic Top Banner with Breadcrumbs */}
       <PageBanner
-        title={post.title}
+        title="Blog Details"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Our Blogs", href: "/blog" },
-          { label: post.title },
+          { label: "Blog Details" },
         ]}
       />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           

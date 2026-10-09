@@ -25,18 +25,25 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
           className="object-cover object-center sm:object-[center_28%] brightness-90"
         />
 
-        {/* 2. Soft Blue Overlay (Text readability & visible office background) */}
+        {/* 2. Soft Blue Overlay */}
         <div className="absolute inset-0 bg-[#0A1A2F]/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A2F]/80 via-[#0A1A2F]/50 to-[#0A1A2F]/20 sm:to-transparent" />
       </div>
 
       {/* 3. Text & Breadcrumb Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-6">
-        <div className="max-w-2xl">
-          {/* Breadcrumbs (Home ▸ Contact Us / Services) */}
+        <div className="max-w-4xl">
+          {/* Breadcrumbs (Home ▸ Our Blogs ▸ Short Title) */}
           <nav className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-gray-200 mb-2 sm:mb-3 drop-shadow-sm">
             {breadcrumbs.map((item, index) => {
               const isLast = index === breadcrumbs.length - 1;
+
+              // Agar last item lamba blog title hai toh use truncate kar do taaki breadcrumb mess na bane
+              const displayLabel =
+                isLast && item.label.length > 28
+                  ? `${item.label.slice(0, 28)}...`
+                  : item.label;
+
               return (
                 <div key={index} className="flex items-center gap-1.5 sm:gap-2">
                   {item.href && !isLast ? (
@@ -44,11 +51,11 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
                       href={item.href}
                       className="hover:text-white transition-colors"
                     >
-                      {item.label}
+                      {displayLabel}
                     </Link>
                   ) : (
                     <span className={isLast ? "text-white" : "text-gray-200"}>
-                      {item.label}
+                      {displayLabel}
                     </span>
                   )}
 
