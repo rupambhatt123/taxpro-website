@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif !important;
+}

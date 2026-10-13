@@ -5,11 +5,17 @@ import Link from "next/link";
 import {
   ArrowRight,
   FileSpreadsheet,
-  Percent,
+  Receipt,
   TrendingUp,
   Calculator,
-  FileText,
+  FileCheck2,
   Building2,
+  Scale,
+  Landmark,
+  ShieldAlert,
+  Coins,
+  Briefcase,
+  FileText,
   Sparkles,
   ShieldCheck,
   ChevronLeft,
@@ -18,23 +24,35 @@ import {
 } from "lucide-react";
 import rawSiteData from "../../data/siteData.json";
 
-// Safe dynamic JSON casting
 const siteData = rawSiteData as any;
 
-// Slug to Icon fallback mapping
 const iconMap: Record<string, LucideIcon> = {
   "income-tax-return-filing": FileSpreadsheet,
   "itr-filing": FileSpreadsheet,
-  "tax-consulting": FileSpreadsheet,
-  "gst-registration-filing": Percent,
-  "gst-compliance": Percent,
+  "tax-consulting": Calculator,
+  "gst-registration-filing": Receipt,
+  "gst-compliance": Receipt,
   "tax-planning": TrendingUp,
   "financial-planning": TrendingUp,
   "accounting-bookkeeping": Calculator,
-  "corporate-tax": Calculator,
-  "tds-return-filing": FileText,
-  "business-advisory": FileText,
+  "corporate-tax": Landmark,
+  "tds-return-filing": FileCheck2,
+  "business-advisory": Briefcase,
   "business-company-registration": Building2,
+  "audit-assurance": Scale,
+  "statutory-audit": Scale,
+  "tax-dispute-resolution": ShieldAlert,
+  "payroll-management": Coins,
+  "compliance-services": ShieldCheck,
+  tax: FileSpreadsheet,
+  gst: Receipt,
+  accounting: Calculator,
+  audit: Scale,
+  planning: TrendingUp,
+  advisory: Briefcase,
+  corporate: Landmark,
+  registration: Building2,
+  tds: FileCheck2,
 };
 
 interface ServiceItem {
@@ -69,7 +87,6 @@ export default function Services({ data }: ServicesProps) {
 
   const servicesList = content?.items || [];
 
-  // Mobile Touch Swipe Handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
@@ -93,9 +110,32 @@ export default function Services({ data }: ServicesProps) {
     }
   };
 
+  const resolveIcon = (item: ServiceItem): LucideIcon => {
+    if (item.icon && iconMap[item.icon.toLowerCase()]) {
+      return iconMap[item.icon.toLowerCase()];
+    }
+
+    const slug = (item.slug || "").toLowerCase();
+    if (iconMap[slug]) {
+      return iconMap[slug];
+    }
+
+    const title = (item.title || item.name || "").toLowerCase();
+    if (title.includes("gst")) return Receipt;
+    if (title.includes("itr") || title.includes("income tax")) return FileSpreadsheet;
+    if (title.includes("accounting") || title.includes("bookkeeping")) return Calculator;
+    if (title.includes("planning")) return TrendingUp;
+    if (title.includes("audit")) return Scale;
+    if (title.includes("company") || title.includes("registration")) return Building2;
+    if (title.includes("corporate")) return Landmark;
+    if (title.includes("tds")) return FileCheck2;
+    if (title.includes("advisory") || title.includes("consulting")) return Briefcase;
+
+    return ShieldCheck;
+  };
+
   return (
-    <section className="relative py-8 sm:py-10 lg:py-10 bg-[#F8FCF9] overflow-hidden" id="services">
-      {/* Background Decoratives */}
+    <section className="relative py-12 sm:py-16 lg:py-20 bg-[#F8FCF9] overflow-hidden" id="services">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div 
           className="absolute inset-0 bg-[linear-gradient(to_right,#00A85912_1px,transparent_1px),linear-gradient(to_bottom,#00A85912_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)]" 
@@ -112,9 +152,7 @@ export default function Services({ data }: ServicesProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        
-        {/* ================= HEADER SECTION ================= */}
-        <div className="flex flex-col items-center mb-7 sm:mb-8">
+        <div className="flex flex-col items-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E3F7EC] border border-[#00A859]/30 text-[#008A44] shadow-xs mb-3">
             <span className="w-2 h-2 rounded-full bg-[#00A859] animate-ping" />
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider">
@@ -142,7 +180,6 @@ export default function Services({ data }: ServicesProps) {
           </p>
         </div>
 
-        {/* ================= 1. MOBILE SLIDER VIEW (md:hidden - ONLY 1 CARD VISIBLE) ================= */}
         <div 
           className="md:hidden relative w-full overflow-hidden px-1"
           onTouchStart={handleTouchStart}
@@ -154,17 +191,16 @@ export default function Services({ data }: ServicesProps) {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {servicesList.map((item) => {
-              const Icon = iconMap[item.slug] || ShieldCheck;
+              const Icon = resolveIcon(item);
               const cardTitle = item.title || item.name || "Tax Service";
               const cardDesc = item.desc || item.desc1 || item.description || "";
 
               return (
                 <div key={item.slug} className="w-full flex-shrink-0 px-2">
                   <div className="relative bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-[0_6px_20px_rgb(0,0,0,0.04)] flex flex-col items-center justify-between text-center min-h-[310px]">
-                    
                     <div className="flex flex-col items-center w-full">
                       <div className="w-14 h-14 rounded-2xl bg-[#EAF8F1] flex items-center justify-center text-[#00A859] mb-4 shadow-xs">
-                        <Icon className="w-7 h-7 stroke-[2.2]" />
+                        <Icon className="w-7 h-7 stroke-[2]" />
                       </div>
 
                       <h3 className="text-lg font-extrabold text-[#0A1A2F] mb-2 leading-snug">
@@ -189,7 +225,6 @@ export default function Services({ data }: ServicesProps) {
             })}
           </div>
 
-          {/* Dots Navigation for Mobile */}
           <div className="flex items-center justify-center gap-2 mt-5">
             <button
               onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))}
@@ -226,10 +261,9 @@ export default function Services({ data }: ServicesProps) {
           </div>
         </div>
 
-        {/* ================= 2. DESKTOP/TABLET GRID VIEW (hidden md:grid) ================= */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 text-center">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center items-stretch">
           {servicesList.map((item) => {
-            const Icon = iconMap[item.slug] || ShieldCheck;
+            const Icon = resolveIcon(item);
             const cardTitle = item.title || item.name || "Tax Service";
             const cardDesc = item.desc || item.desc1 || item.description || "";
 
@@ -240,9 +274,9 @@ export default function Services({ data }: ServicesProps) {
               >
                 <div className="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[#00A859] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
 
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 rounded-2xl bg-[#EAF8F1] flex items-center justify-center text-[#00A859] mb-4 group-hover:bg-[#00A859] group-hover:text-white group-hover:scale-105 group-hover:rotate-2 transition-all duration-300 shadow-xs">
-                    <Icon className="w-7 h-7 stroke-[2.2]" />
+                <div className="flex flex-col items-center w-full">
+                  <div className="w-14 h-14 rounded-2xl bg-[#EAF8F1] flex items-center justify-center text-[#00A859] mb-4 group-hover:bg-[#00A859] group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-xs">
+                    <Icon className="w-7 h-7 stroke-[1.9]" />
                   </div>
 
                   <h3 className="text-lg font-extrabold text-[#0A1A2F] group-hover:text-[#00A859] transition-colors duration-200 mb-2 leading-snug">
@@ -256,7 +290,7 @@ export default function Services({ data }: ServicesProps) {
 
                 <Link
                   href={`/services/${item.slug}`}
-                  className="mt-auto inline-flex items-center gap-1.5 font-black text-xs sm:text-[13px] text-[#0A1A2F] group-hover:text-[#00A859] transition-colors"
+                  className="mt-auto inline-flex items-center gap-1.5 font-bold text-xs sm:text-[13px] text-[#0A1A2F] group-hover:text-[#00A859] transition-colors"
                 >
                   <span>Read More</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -265,7 +299,6 @@ export default function Services({ data }: ServicesProps) {
             );
           })}
         </div>
-
       </div>
     </section>
   );

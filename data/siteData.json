@@ -1,10 +1,9 @@
 {
   "common": {
     "siteName": "TaxPro",
-    "phone": "+1 234 567 890",
+    "phone": "+1 000 000 000",
     "email": "info@xyz.com",
     "address": "8708 Technology Forest Pl Suite 125 - G, The Woodlands, TX 77381",
-    
     "socialLinks": {
       "facebook": "https://facebook.com",
       "instagram": "https://instagram.com",
@@ -15,6 +14,455 @@
   },
   "categories": {
     "TaxConsulting": {
+      "slugAliases": {
+        "income-tax-return-filing": "itr-filing",
+        "gst-registration-filing": "gst-compliance",
+        "tax-planning": "tax-consulting",
+        "tds-return-filing": "tax-consulting",
+        "business-company-registration": "company-registration"
+      },
+      "servicesDetail": {
+        "tax-consulting": {
+          "titleFirst": "Tax",
+          "titleSecond": "Consulting",
+          "subtitle": "Expert tax consulting services to help you stay compliant, optimize tax savings and make smarter financial decisions.",
+          "mainImage": "/p1.jpg",
+          "features": [
+            { "label": "Reduce Tax Liability" },
+            { "label": "Stay Compliant" },
+            { "label": "Expert Guidance" },
+            { "label": "Strategic Planning" }
+          ],
+          "overviewP1": "Our tax consulting services are designed to help individuals and businesses manage their tax responsibilities efficiently. We provide expert guidance on tax planning, compliance, and advisory to ensure you make the most of available benefits while staying fully compliant with the latest tax laws and regulations.",
+          "overviewP2": "Whether you are a salaried individual, a self-employed professional, or a growing business, our team offers personalized solutions tailored to your financial goals and industry requirements.",
+          "whyImage": "/p2.png",
+          "whyPoints": [
+            "Minimize your tax liability legally",
+            "Stay compliant with government regulations",
+            "Make informed financial decisions",
+            "Avoid penalties and legal issues",
+            "Plan for long-term financial growth"
+          ],
+          "subOfferings": [
+            {
+              "title": "Tax Planning",
+              "desc": "Strategic planning to minimize your tax liability and maximize savings."
+            },
+            {
+              "title": "Tax Compliance",
+              "desc": "Assistance with filing returns and meeting all regulatory requirements."
+            },
+            {
+              "title": "Advisory Services",
+              "desc": "Expert advice on direct and indirect tax matters for individuals and businesses."
+            },
+            {
+              "title": "Dispute Resolution",
+              "desc": "Support in handling tax notices, audits and disputes with authorities."
+            }
+          ]
+        },
+        "financial-planning": {
+          "titleFirst": "Financial",
+          "titleSecond": "Planning",
+          "subtitle": "Comprehensive financial roadmaps designed to secure your long-term wealth, optimize cash flow, and achieve financial freedom.",
+          "mainImage": "/ts.webp",
+          "features": [
+            { "label": "Wealth Protection" },
+            { "label": "Cash Flow Strategy" },
+            { "label": "Portfolio Growth" },
+            { "label": "Retirement Ready" }
+          ],
+          "overviewP1": "Our financial planning experts help you design robust strategies that bridge current earning power with future financial independence. We evaluate your assets, debts, and projected income to formulate customized growth blueprints.",
+          "overviewP2": "From retirement planning and emergency cushions to debt management, we align every financial decision with your personalized life priorities and milestones.",
+          "whyImage": "/t4.jpg",
+          "whyPoints": [
+            "Tailored roadmaps for distinct life milestones",
+            "Disciplined cash flow and expense management",
+            "Risk mitigation and inflation protection",
+            "Goal-based retirement corpus creation",
+            "Periodic reviews to align with market shifts"
+          ],
+          "subOfferings": [
+            {
+              "title": "Wealth Creation",
+              "desc": "Systematic capital compounding through disciplined portfolio allocation."
+            },
+            {
+              "title": "Retirement Roadmap",
+              "desc": "Securing financial independence and passive income streams."
+            },
+            {
+              "title": "Debt Optimization",
+              "desc": "Strategic restructuring of liabilities to eliminate high-interest debts."
+            },
+            {
+              "title": "Emergency Planning",
+              "desc": "Protecting family assets against unexpected medical or economic shocks."
+            }
+          ]
+        },
+        "business-advisory": {
+          "titleFirst": "Business",
+          "titleSecond": "Advisory",
+          "subtitle": "Strategic consulting to elevate business performance, scale operations sustainably, and navigate complex business challenges.",
+          "mainImage": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Operational Scale" },
+            { "label": "Risk Mitigation" },
+            { "label": "Capital Efficiency" },
+            { "label": "Market Advisory" }
+          ],
+          "overviewP1": "We partner with startups, SMEs, and expanding enterprises to evaluate operational bottlenecks, formulate growth frameworks, and optimize capital utilization.",
+          "overviewP2": "Our experienced consultants leverage industry benchmarks and quantitative financial data to help you capture market opportunities while minimizing operational vulnerabilities.",
+          "whyImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Pragmatic business frameworks tailored to your industry",
+            "Actionable market feasibility and revenue diagnostics",
+            "Cost optimization without compromising product quality",
+            "Investor pitch-deck and fundraising advisory",
+            "Risk management and corporate restructuring models"
+          ],
+          "subOfferings": [
+            {
+              "title": "Growth Strategy",
+              "desc": "Scaling operations sustainably while preserving margin profitability."
+            },
+            {
+              "title": "Financial Modeling",
+              "desc": "Forecasting operational revenue and cash requirements accurately."
+            },
+            {
+              "title": "Due Diligence",
+              "desc": "Thorough auditing and valuation support for mergers and investments."
+            },
+            {
+              "title": "Operational Turnaround",
+              "desc": "Eliminating inefficiencies to restore bottom-line health."
+            }
+          ]
+        },
+        "gst-compliance": {
+          "titleFirst": "GST &",
+          "titleSecond": "Compliance",
+          "subtitle": "End-to-end Goods and Services Tax advisory, registration, seamless reconciliations, and penalty-free return filings.",
+          "mainImage": "/t4.jpg",
+          "features": [
+            { "label": "ITC Reconciliation" },
+            { "label": "Zero Penalties" },
+            { "label": "On-Time Filing" },
+            { "label": "Notice Response" }
+          ],
+          "overviewP1": "GST compliance requires disciplined tracking of sales invoices, purchase registers, and input tax credit adjustments. We ensure your enterprise satisfies all statutory deadlines without disruption.",
+          "overviewP2": "We run advanced 2A/2B reconciliations every month to ensure zero leakage of Input Tax Credit, protecting your working capital from avoidable tax outgo.",
+          "whyImage": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Accurate filing of GSTR-1, GSTR-3B, and annual GSTR-9 returns",
+            "100% Input Tax Credit reconciliation to eliminate cash leakage",
+            "Complete exemption from late-filing fees and penalties",
+            "Proactive response handling for departmental GST notices",
+            "Expert classification under accurate HSN/SAC codes and rate slabs"
+          ],
+          "subOfferings": [
+            {
+              "title": "GST Registration",
+              "desc": "Expedited GSTIN allotment for fresh businesses and branches."
+            },
+            {
+              "title": "Monthly Filings",
+              "desc": "Meticulous calculation and timely return submission every tax cycle."
+            },
+            {
+              "title": "ITC Reconciliation",
+              "desc": "Matching purchase registers against supplier portal uploads."
+            },
+            {
+              "title": "Notice Rectification",
+              "desc": "Resolving mismatches, scrutiny letters, and demand rectifications."
+            }
+          ]
+        },
+        "itr-filing": {
+          "titleFirst": "ITR",
+          "titleSecond": "Filing",
+          "subtitle": "Hassle-free, accurate Income Tax Return filing for salaried individuals, professionals, and corporate entities.",
+          "mainImage": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Maximum Refund" },
+            { "label": "AIS / 26AS Match" },
+            { "label": "Error-Free Filing" },
+            { "label": "Deduction Check" }
+          ],
+          "overviewP1": "Filing your Income Tax Return shouldn't be stressful. We ensure every legitimate deduction under Sections 80C to 80U is claimed to maximize your refund and eliminate defective-return notices.",
+          "overviewP2": "Whether you have capital gains from shares/real estate, multi-state freelance income, or complex corporate profit splits, our experienced tax professionals handle the filing seamlessly.",
+          "whyImage": "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Maximum tax refund realization through exhaustive deduction checks",
+            "Zero error rate on capital gains and crypto income calculations",
+            "Filing strictly prior to deadlines to prevent Section 234F penalties",
+            "AIS and 26AS reconciliation to prevent scrutiny notices",
+            "Digital verification and acknowledgement slip generation"
+          ],
+          "subOfferings": [
+            {
+              "title": "Salaried ITR",
+              "desc": "Form 16 based swift tax computation and return submission."
+            },
+            {
+              "title": "Capital Gains Tax",
+              "desc": "Accurate computation for stock markets, mutual funds, and properties."
+            },
+            {
+              "title": "Corporate Tax Return",
+              "desc": "Audited return preparation for Private Limited and LLP firms."
+            },
+            {
+              "title": "Defective Notice Help",
+              "desc": "Resolving 139(9) defects and filing updated/revised returns."
+            }
+          ]
+        },
+        "corporate-tax": {
+          "titleFirst": "Corporate",
+          "titleSecond": "Tax",
+          "subtitle": "Holistic corporate tax structure for Private Limited, LLP, and multinational firms ensuring statutory compliance.",
+          "mainImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Audit Defense" },
+            { "label": "Transfer Pricing" },
+            { "label": "TDS / TCS Filing" },
+            { "label": "Corporate Shield" }
+          ],
+          "overviewP1": "Managing corporate taxation requires robust planning across advance taxes, withholding compliance, and statutory audit limits. We help companies protect profitability while maintaining transparency.",
+          "overviewP2": "Our experienced corporate tax consultants defend complex tax positions, manage transfer pricing documentation, and handle representation before appellate tax authorities.",
+          "whyImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Comprehensive corporate tax structuring and planning",
+            "End-to-end statutory tax audit assistance under 44AB",
+            "Strict adherence to quarterly TDS and TCS deposit schedules",
+            "Defense support during assessment and reassessment proceedings",
+            "Transfer pricing study and benchmarking analysis"
+          ],
+          "subOfferings": [
+            {
+              "title": "Corporate Tax Filing",
+              "desc": "Preparation and electronic verification of audited corporate returns."
+            },
+            {
+              "title": "Transfer Pricing",
+              "desc": "Documentation and arm's length determination for inter-company dealings."
+            },
+            {
+              "title": "Statutory Audit Support",
+              "desc": "Detailed reconciliation of books with statutory tax reports."
+            },
+            {
+              "title": "Withholding Tax (TDS)",
+              "desc": "Accurate calculation, deduction, and quarterly filing support."
+            }
+          ]
+        },
+        "investment-planning": {
+          "titleFirst": "Investment",
+          "titleSecond": "Planning",
+          "subtitle": "Strategic asset allocation and portfolio structuring designed to outpace inflation and compound wealth safely.",
+          "mainImage": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Asset Allocation" },
+            { "label": "Inflation Shield" },
+            { "label": "Risk Rebalancing" },
+            { "label": "High Net Yield" }
+          ],
+          "overviewP1": "Smart investing is about balancing risk appetite with compounding returns. We analyze your time horizons to design balanced, diversified portfolios across equity, debt, and liquid instruments.",
+          "overviewP2": "We help you avoid speculative pitfalls by adhering to disciplined asset allocation models that systematically grow capital over 3, 5, and 10-year horizons.",
+          "whyImage": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Asset allocation tailored to your specific risk tolerance",
+            "Tax-efficient investment instruments to boost net yield",
+            "Portfolio rebalancing during volatile market cycles",
+            "Elimination of overlapping and underperforming funds",
+            "Transparent wealth performance reporting and tracking"
+          ],
+          "subOfferings": [
+            {
+              "title": "Mutual Funds & SIPs",
+              "desc": "Handpicked equity and debt schemes aligned with your goals."
+            },
+            {
+              "title": "Tax Saving Funds",
+              "desc": "Maximizing Section 80C benefits through high-performing ELSS."
+            },
+            {
+              "title": "Fixed Income Assets",
+              "desc": "Securing stable returns through government bonds and corporate FDs."
+            },
+            {
+              "title": "Portfolio Healthcheck",
+              "desc": "In-depth review of existing investments to optimize returns."
+            }
+          ]
+        },
+        "company-registration": {
+          "titleFirst": "Company",
+          "titleSecond": "Registration",
+          "subtitle": "Fast, seamless incorporation for Private Limited, LLP, OPC, and Partnership businesses with full ROC compliance.",
+          "mainImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Online Filing" },
+            { "label": "MCA / ROC Speed" },
+            { "label": "PAN / TAN Ready" },
+            { "label": "Startup Subsidies" }
+          ],
+          "overviewP1": "Turning your entrepreneurial vision into a legitimate corporate entity is effortless with our incorporation experts. We handle name approval, SPICe+ forms, digital signatures, and DIN registrations.",
+          "overviewP2": "We draft MCA-compliant Articles of Association (AOA) and Memorandums of Association (MOA), helping you obtain your Certificate of Incorporation, PAN, and TAN without bureaucratic delay.",
+          "whyImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "End-to-end incorporation paperwork handled completely online",
+            "Government-compliant drafting of MOA, AOA, and partnership deeds",
+            "Dedicated DIN, DSC, and ROC approval assistance",
+            "Free PAN, TAN, and current bank account opening facilitation",
+            "Post-incorporation guidance on first-year statutory compliance"
+          ],
+          "subOfferings": [
+            {
+              "title": "Private Limited Co.",
+              "desc": "The gold standard for startups seeking equity funding and scale."
+            },
+            {
+              "title": "LLP Incorporation",
+              "desc": "Ideal for professional partnerships needing limited liability protection."
+            },
+            {
+              "title": "One Person Co. (OPC)",
+              "desc": "Corporate stature with 100% sole owner control."
+            },
+            {
+              "title": "MSME / Startup India",
+              "desc": "Unlocking government tax holidays, seed grants, and subsidies."
+            }
+          ]
+        },
+        "accounting-bookkeeping": {
+          "titleFirst": "Accounting &",
+          "titleSecond": "Bookkeeping",
+          "subtitle": "Accurate, audit-ready financial bookkeeping to maintain ledger clarity and give you complete control over your business numbers.",
+          "mainImage": "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Cloud Ledgers" },
+            { "label": "Monthly MIS" },
+            { "label": "Bank Matching" },
+            { "label": "Audit Ready" }
+          ],
+          "overviewP1": "A clean set of financial books is the foundation of every thriving company. We record day-to-day purchases, sales, invoices, and bank statements with precision on cloud platforms.",
+          "overviewP2": "Our bookkeeping services ensure your P&L, balance sheets, and cash flow forecasts are always accurate and ready for investors, banks, or statutory tax audits.",
+          "whyImage": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Audit-ready ledgers maintained on modern cloud software",
+            "Prompt bank and payment gateway reconciliation",
+            "Real-time visibility into cash flow and receivable aging",
+            "Accurate P&L and Balance Sheet reports generated monthly",
+            "Reduced administrative costs with outsourced efficiency"
+          ],
+          "subOfferings": [
+            {
+              "title": "Daily Bookkeeping",
+              "desc": "Timely recording of incoming payments, vendor bills, and vouchers."
+            },
+            {
+              "title": "Bank Reconciliation",
+              "desc": "Eliminating ledger-bank discrepancies on a recurring schedule."
+            },
+            {
+              "title": "Financial Reporting",
+              "desc": "Monthly management information systems (MIS) and balance sheets."
+            },
+            {
+              "title": "Cloud Accounting",
+              "desc": "Setup and migration to QuickBooks, Zoho Books, or Tally Prime."
+            }
+          ]
+        },
+        "payroll-services": {
+          "titleFirst": "Payroll",
+          "titleSecond": "Services",
+          "subtitle": "Complete payroll processing, salary disbursement structures, and statutory compliance covering PF, ESI, and TDS.",
+          "mainImage": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Timely Payslips" },
+            { "label": "PF & ESI Filing" },
+            { "label": "Tax Declaration" },
+            { "label": "Labor Law Ready" }
+          ],
+          "overviewP1": "Managing employee payroll requires precise handling of salary structures, leave deductions, overtime, and statutory contributions. We automate your monthly payroll workflow end-to-end.",
+          "overviewP2": "From generating employee pay slips to depositing EPF, ESI, and Professional Tax, we safeguard your company against labor law defaults and non-compliance fines.",
+          "whyImage": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "100% timely salary processing and payslip generation",
+            "Zero-defect computation of PF, ESIC, and Professional Tax",
+            "Form 16 generation and employee tax declaration management",
+            "Custom compensation structuring to maximize take-home pay",
+            "Full compliance with state and central labor regulations"
+          ],
+          "subOfferings": [
+            {
+              "title": "Monthly Payroll",
+              "desc": "Automated calculations of deductions, bonuses, and gross salaries."
+            },
+            {
+              "title": "EPF & ESIC Filings",
+              "desc": "Monthly challan generation and statutory compliance deposits."
+            },
+            {
+              "title": "Payslip Portal",
+              "desc": "Direct distribution of password-protected payslips to employees."
+            },
+            {
+              "title": "Labor Law Compliance",
+              "desc": "Annual returns and regulatory compliance documentation."
+            }
+          ]
+        },
+        "audit-assurance": {
+          "titleFirst": "Audit &",
+          "titleSecond": "Assurance",
+          "subtitle": "Independent, rigorous audit and assurance services that build stakeholder trust and verify financial integrity.",
+          "mainImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+          "features": [
+            { "label": "Financial Clarity" },
+            { "label": "MCA Compliance" },
+            { "label": "Internal Controls" },
+            { "label": "Bank Trust" }
+          ],
+          "overviewP1": "Our audit and assurance services provide independent verification of your financial statements, identifying operational vulnerabilities and assuring regulatory compliance.",
+          "overviewP2": "We conduct statutory audits, internal financial control assessments, and tax audits that give investors, directors, and banks unconditional confidence in your reported numbers.",
+          "whyImage": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80",
+          "whyPoints": [
+            "Unbiased evaluation of internal controls and financial statements",
+            "Strict compliance with MCA and Income Tax audit standards",
+            "Early detection of accounting inconsistencies and compliance leaks",
+            "Comprehensive management letters detailing actionable risk insights",
+            "Stronger financial credibility with banking and investment partners"
+          ],
+          "subOfferings": [
+            {
+              "title": "Statutory Audit",
+              "desc": "Mandatory corporate auditing under the Companies Act guidelines."
+            },
+            {
+              "title": "Tax Audit (44AB)",
+              "desc": "Exhaustive audits to ensure compliance with Income Tax limits."
+            },
+            {
+              "title": "Internal Controls",
+              "desc": "Evaluating operational systems to prevent fraud and financial leakage."
+            },
+            {
+              "title": "Stock & Asset Audit",
+              "desc": "Physical asset verification and inventory reconciliation."
+            }
+          ]
+        }
+      },
       "templateComponents": {
         "template-1": {
           "shared": {
@@ -549,7 +997,7 @@
             "TaxFooter1": {
               "about": "We provide end-to-end tax and financial consulting services to individuals, professionals and businesses. Our goal is to simplify your tax journey with accurate guidance, strategic planning and complete compliance support.",
               "location": "8708 Technology Forest Pl Suite 125 - G, The Woodlands, TX 77381",
-              "phone": "+1 234 567 890",
+              "phone": "+1 000 000 000",
               "email": "info@xyz.com",
               "copyright": "© 2026 TaxPro. All Rights Reserved. Powered by Lestow."
             }

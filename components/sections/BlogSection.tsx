@@ -3,10 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { User, MessageSquare, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { User, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import rawSiteData from "../../data/siteData.json";
 
-// Safe dynamic JSON casting
 const siteData = rawSiteData as any;
 
 export interface BlogPost {
@@ -40,7 +39,6 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ data }: BlogSectionProps) {
-  // Direct prop support ya JSON fallback
   const content: BlogData =
     data || siteData.categories.TaxConsulting.sections.Blog.variants.TaxBlog1;
 
@@ -52,8 +50,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
 
   return (
     <section className="relative py-10 lg:py-12 bg-[#FBFDFA] overflow-hidden" id="blog">
-      
-      {/* Background Soft Glow Effects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-36 -right-36 w-[500px] h-[500px] bg-[#00A859]/[0.08] rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 -left-48 w-[450px] h-[450px] bg-emerald-100/50 rounded-full blur-3xl pointer-events-none" />
@@ -61,11 +57,7 @@ export default function BlogSection({ data }: BlogSectionProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Top Header: Dynamic from JSON */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          
-          {/* Pill Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#E3F7EC] border border-[#00A859]/30 text-[#008A44] shadow-2xs mb-4">
             <span className="w-2 h-2 rounded-full bg-[#00A859] animate-ping" />
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider">
@@ -73,7 +65,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
             </span>
           </div>
 
-          {/* Heading */}
           <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-[#0A1A2F] tracking-tight leading-[1.18] mb-3">
             {content.titleLine1} <span className="text-[#00A859]">{content.titleHighlight}</span>
           </h2>
@@ -85,12 +76,10 @@ export default function BlogSection({ data }: BlogSectionProps) {
           </p>
         </div>
 
-        {/* Cards Section */}
         <div className="flex md:grid md:grid-cols-3 gap-6 lg:gap-8 overflow-x-auto md:overflow-visible pb-6 md:pb-0 snap-x snap-mandatory scrollbar-none">
           {posts.map((item: BlogPost, index: number) => {
             const isVisibleOnDesktop = index >= startIndex && index < startIndex + 3;
 
-            // Date fallback logic
             const day = item.dateDay || (item.date ? item.date.split(" ")[1]?.replace(",", "") : "01");
             const month = item.dateMonth || (item.date ? item.date.split(" ")[0]?.slice(0, 3) : "Jan");
 
@@ -101,7 +90,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
                   isVisibleOnDesktop ? "md:flex" : "md:hidden"
                 }`}
               >
-                {/* Blog Image + Date Badge */}
                 <div className="relative h-56 w-full rounded-xl overflow-hidden mb-4 bg-gray-100">
                   <Image
                     src={item.image}
@@ -116,21 +104,13 @@ export default function BlogSection({ data }: BlogSectionProps) {
                   </div>
                 </div>
 
-                {/* Author & Comments */}
                 <div className="flex items-center gap-4 text-xs text-gray-500 mb-3 px-1">
                   <div className="flex items-center gap-1.5">
                     <User className="w-3.5 h-3.5 text-[#00A859]" />
                     <span>By {item.author}</span>
                   </div>
-                  {item.comments && (
-                    <div className="flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-[#00A859]" />
-                      <span>{item.comments}</span>
-                    </div>
-                  )}
                 </div>
 
-                {/* Title & Description */}
                 <div className="flex-1 px-1">
                   <h3 className="text-lg font-bold text-[#0A1A2F] leading-snug line-clamp-2 group-hover:text-[#00A859] transition-colors mb-2">
                     {item.title}
@@ -140,7 +120,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
                   </p>
                 </div>
 
-                {/* Read More CTA */}
                 <div className="mt-auto px-1 pb-1">
                   <Link
                     href={`/blog/${item.slug}`}
@@ -154,10 +133,7 @@ export default function BlogSection({ data }: BlogSectionProps) {
           })}
         </div>
 
-        {/* Bottom Pagination & View All CTA */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-100 pt-6">
-          
-          {/* Pagination Controls */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -192,7 +168,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
             </button>
           </div>
 
-          {/* View All Button */}
           <Link
             href={content.button?.href || "/blog"}
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#00A859] text-[#00A859] hover:bg-[#00A859] hover:text-white text-xs font-bold transition shadow-xs"
@@ -200,7 +175,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
             {content.button?.label || "View All Blogs"} <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
-
       </div>
     </section>
   );

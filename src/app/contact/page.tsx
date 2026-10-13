@@ -15,14 +15,12 @@ export default function ContactPage() {
   const contactVariant =
     siteData.categories?.TaxConsulting?.sections?.Contact?.variants?.TaxContact1 || {};
 
-  // 1. Dynamic Titles & Headers from JSON
   const badgeText = contactVariant.badge || "CONTACT US";
   const titleLine1 = contactVariant.titleLine1 || "";
   const titleLine2 = contactVariant.titleLine2 || "";
   const titleHighlight = contactVariant.titleHighlight || "";
   const descriptionText = contactVariant.description || "";
 
-  // 2. Dynamic Contact Details
   const phoneNumber = contactVariant.call?.phone || common.phone;
   const phoneTitle = contactVariant.call?.title || "Call or Text";
   const phoneHours = contactVariant.call?.hours || common.officeHours;
@@ -34,7 +32,10 @@ export default function ContactPage() {
   const officeAddress = contactVariant.office?.address || common.address;
   const officeTitle = contactVariant.office?.title || "Our Office";
 
-  // 3. Form State
+  const mapUrl =
+    contactVariant.mapLocation?.embedUrl ||
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6118939768!2d-95.53597652701037!3d30.165819777550868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864736bfa5a9757f%3A0xe5c9941a547fae32!2sThe%20Woodlands%2C%20TX!5e0!3m2!1sen!2sus!4v1716500000000!5m2!1sen!2sus";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,10 +52,8 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-[#FBFDFA] overflow-x-hidden">
-      {/* Header */}
       <Navbar />
 
-      {/* Top Banner */}
       <PageBanner
         title={badgeText}
         breadcrumbs={[
@@ -63,14 +62,9 @@ export default function ContactPage() {
         ]}
       />
 
-      {/* Main Content Section */}
-      <section className="py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* ================= 1. THANK YOU VIEW (REFERENCE STYLE) ================= */}
+      <section className="pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {submitted ? (
           <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-[0_15px_45px_rgba(0,0,0,0.05)] p-8 sm:p-14 text-center animate-in fade-in zoom-in-95 duration-500">
-            
-            {/* Glowing Green Checkmark Icon with Radiating Dashes */}
             <div className="relative inline-flex items-center justify-center mb-6">
               <div className="absolute inset-0 -m-3 border-2 border-dashed border-[#00A859]/30 rounded-full animate-spin-slow pointer-events-none" />
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#EAF8F1] flex items-center justify-center text-[#00A859] shadow-md relative z-10">
@@ -80,22 +74,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Main Thank You Title */}
             <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-black text-[#0A1A2F] tracking-tight leading-tight mb-3">
               Thank <span className="text-[#00A859]">You!</span>
             </h2>
 
-            {/* Sub-headline */}
             <h3 className="text-xl sm:text-2xl font-black text-[#0A1A2F] mb-4">
               Your message has been sent successfully.
             </h3>
 
-            {/* Subtitle Description */}
             <p className="text-gray-600 max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
               We appreciate you reaching out to us. Our team will review your information and get back to you within 30 minutes during business hours.
             </p>
 
-            {/* Explore Services CTA Button */}
             <div className="mb-12">
               <Link
                 href="/services"
@@ -106,9 +96,7 @@ export default function ContactPage() {
               </Link>
             </div>
 
-            {/* Bottom Horizontal Contact Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 border-t border-gray-100 bg-gray-50/70 p-6 rounded-2xl">
-              {/* Phone Card */}
               {phoneNumber && (
                 <div className="flex items-center gap-3 text-left">
                   <div className="w-11 h-11 rounded-full bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -122,7 +110,6 @@ export default function ContactPage() {
                 </div>
               )}
 
-              {/* Email Card */}
               {emailAddress && (
                 <div className="flex items-center gap-3 text-left md:border-l md:border-gray-200 md:pl-4">
                   <div className="w-11 h-11 rounded-full bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -136,7 +123,6 @@ export default function ContactPage() {
                 </div>
               )}
 
-              {/* Office Card */}
               {officeAddress && (
                 <div className="flex items-center gap-3 text-left md:border-l md:border-gray-200 md:pl-4">
                   <div className="w-11 h-11 rounded-full bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -150,7 +136,6 @@ export default function ContactPage() {
               )}
             </div>
 
-            {/* Back to Form */}
             <div className="mt-6">
               <button
                 onClick={() => {
@@ -162,14 +147,9 @@ export default function ContactPage() {
                 Send another message
               </button>
             </div>
-
           </div>
         ) : (
-          
-          /* ================= 2. DEFAULT CONTACT FORM VIEW ================= */
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            
-            {/* Left Column: Dynamic Contact Cards */}
             <div className="lg:col-span-5 space-y-6">
               <div>
                 {badgeText && (
@@ -193,7 +173,6 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-4 pt-2">
-                {/* Phone Card */}
                 {phoneNumber && (
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-xs">
                     <div className="w-11 h-11 rounded-xl bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -206,7 +185,6 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                {/* Email Card */}
                 {emailAddress && (
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-xs">
                     <div className="w-11 h-11 rounded-xl bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -220,7 +198,6 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                {/* Office Address Card */}
                 {officeAddress && (
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-xs">
                     <div className="w-11 h-11 rounded-xl bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -237,7 +214,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Column: Contact Form */}
             <div className="lg:col-span-7">
               <div className="bg-white p-6 sm:p-10 rounded-3xl border border-gray-100 shadow-lg relative">
                 <h3 className="text-xl sm:text-2xl font-black text-[#0A1A2F] mb-1">
@@ -330,13 +306,25 @@ export default function ContactPage() {
                 </form>
               </div>
             </div>
-
           </div>
         )}
 
+        {mapUrl && (
+          <div className="mt-16 sm:mt-20 lg:mt-24 w-full h-[380px] sm:h-[460px] rounded-3xl overflow-hidden border border-gray-100 shadow-sm">
+            <iframe
+              src={mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Our Location Map"
+            />
+          </div>
+        )}
       </section>
 
-      {/* Footer */}
       <Footer />
     </main>
   );
