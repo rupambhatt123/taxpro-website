@@ -133,7 +133,7 @@ export default function BlogSection({ data }: BlogSectionProps) {
           })}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-100 pt-6">
+        <div className="mt-10 flex items-center justify-start border-t border-gray-100 pt-6">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -167,13 +167,6 @@ export default function BlogSection({ data }: BlogSectionProps) {
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
-
-          <Link
-            href={content.button?.href || "/blog"}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#00A859] text-[#00A859] hover:bg-[#00A859] hover:text-white text-xs font-bold transition shadow-xs"
-          >
-            {content.button?.label || "View All Blogs"} <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
       </div>
     </section>

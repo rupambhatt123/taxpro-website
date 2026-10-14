@@ -62,7 +62,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {submitted ? (
           <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-gray-100 shadow-[0_15px_45px_rgba(0,0,0,0.05)] p-8 sm:p-14 text-center animate-in fade-in zoom-in-95 duration-500">
             <div className="relative inline-flex items-center justify-center mb-6">
@@ -149,11 +149,11 @@ export default function ContactPage() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <div className="lg:col-span-5 space-y-5">
               <div>
                 {badgeText && (
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F7EC] text-[#008A44] text-xs font-black tracking-wider uppercase mb-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E3F7EC] text-[#008A44] text-xs font-black tracking-wider uppercase mb-2.5">
                     <span>{badgeText}</span>
                   </div>
                 )}
@@ -166,13 +166,13 @@ export default function ContactPage() {
                 )}
 
                 {descriptionText && (
-                  <p className="mt-3 text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="mt-2.5 text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {descriptionText}
                   </p>
                 )}
               </div>
 
-              <div className="space-y-4 pt-2">
+              <div className="space-y-3.5 pt-1">
                 {phoneNumber && (
                   <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-xs">
                     <div className="w-11 h-11 rounded-xl bg-[#EAF8F1] text-[#00A859] flex items-center justify-center flex-shrink-0">
@@ -215,11 +215,11 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="bg-white p-6 sm:p-10 rounded-3xl border border-gray-100 shadow-lg relative">
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-lg relative">
                 <h3 className="text-xl sm:text-2xl font-black text-[#0A1A2F] mb-1">
                   Send Us a Message
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-500 mb-6">
+                <p className="text-xs sm:text-sm text-gray-500 mb-5">
                   Fill out the form below and our team will get back to you shortly.
                 </p>
 
@@ -310,7 +310,7 @@ export default function ContactPage() {
         )}
 
         {mapUrl && (
-          <div className="mt-16 sm:mt-20 lg:mt-24 w-full h-[380px] sm:h-[460px] rounded-3xl overflow-hidden border border-gray-100 shadow-sm">
+          <div className="mt-10 sm:mt-12 lg:mt-14 w-full h-[340px] sm:h-[400px] rounded-3xl overflow-hidden border border-gray-100 shadow-sm">
             <iframe
               src={mapUrl}
               width="100%"

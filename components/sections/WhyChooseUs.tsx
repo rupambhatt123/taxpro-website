@@ -64,7 +64,6 @@ export default function WhyChooseUs({ data }: WhyChooseUsProps) {
       .TaxWhyChooseUs1;
 
   const stepsList = content?.steps || [];
-  const bottomStatsList = content?.bottomStats || [];
   const centerImage = content?.centerImage || "/a1.png";
 
   return (
@@ -105,36 +104,10 @@ export default function WhyChooseUs({ data }: WhyChooseUsProps) {
                 "We take the time to understand your business, financial goals, and challenges to provide personalized tax and financial solutions."}
             </p>
 
-            <p className="text-gray-500 text-xs sm:text-[13px] leading-relaxed mb-6">
+            <p className="text-gray-500 text-xs sm:text-[13px] leading-relaxed">
               {content?.desc2 ||
                 "Our experienced team combines industry expertise with practical insights to help you stay compliant, reduce tax liabilities, and achieve long-term financial growth."}
             </p>
-
-            <div className="pt-4 border-t border-gray-100 grid grid-cols-3 gap-2 sm:gap-3">
-              {bottomStatsList.map((stat, sIdx) => {
-                const IconComponent = iconMap[stat.icon] || Users2;
-                return (
-                  <div
-                    key={sIdx}
-                    className={`flex items-center gap-2.5 ${
-                      sIdx > 0 ? "border-l border-gray-100 pl-2 sm:pl-3" : ""
-                    }`}
-                  >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#EAF8F1] flex items-center justify-center text-[#00A859] flex-shrink-0">
-                      <IconComponent className="w-4 h-4 stroke-[2.2]" />
-                    </div>
-                    <div>
-                      <h4 className="text-sm sm:text-base font-black text-[#0A1A2F] leading-none">
-                        {stat.value}
-                      </h4>
-                      <p className="text-[10px] sm:text-[11px] text-gray-500 font-medium leading-tight mt-1">
-                        {stat.label}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
 
           <div className="lg:col-span-4 relative flex items-center justify-center py-2">

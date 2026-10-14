@@ -68,23 +68,23 @@ export default function FAQSection({ faqData }: FAQSectionProps) {
 
   return (
     <div id="faq" className="w-full bg-[#FBFDFA] overflow-hidden">
-      <section className="py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#E3F7EC] border border-[#00A859]/30 text-[#008A44] shadow-2xs mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#00A859] animate-ping" />
+      <section className="pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-14 lg:pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#E3F7EC] border border-[#00A859]/30 text-[#008A44] shadow-2xs mb-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00A859] animate-ping" />
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider">
               {faqContent.badge || "FAQ"}
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-[#0A1A2F] tracking-tight leading-[1.18] mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-black text-[#0A1A2F] tracking-tight leading-[1.18] mb-2">
             {faqContent.titleLine1 || "Popular"}{" "}
             <span className="text-[#00A859]">
               {faqContent.titleHighlight || "Questions"}
             </span>
           </h2>
 
-          <div className="w-12 h-1 bg-[#00A859] mx-auto mt-2 mb-4 rounded-full shadow-xs" />
+          <div className="w-12 h-1 bg-[#00A859] mx-auto mt-1.5 mb-3 rounded-full shadow-xs" />
 
           <p className="text-gray-500 text-xs sm:text-sm sm:leading-relaxed max-w-xl mx-auto">
             {faqContent.description}
